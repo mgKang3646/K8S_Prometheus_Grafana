@@ -166,11 +166,8 @@ data:
         honor_labels: true
         kubernetes_sd_configs:
         - role: service
-          namespaces:
-            names:
-              - kuberhealthy
+
         relabel_configs:
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
-            target_label: __metrics_path__
             action: keep
             regex: true

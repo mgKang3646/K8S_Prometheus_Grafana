@@ -29,7 +29,7 @@ spec:
       volumes:
         - name: prometheus-config-volume
           configMap:
-            defaultMode: 420
+            defaultMode: 420 # 읽기전용
             name: prometheus-server-conf
         - name: prometheus-storage-volume
-          emptyDir: {}
+          emptyDir: {} #POD 안에 볼륨생성하여 컨테이너끼리 공유
